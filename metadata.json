@@ -1,0 +1,8 @@
+{
+  "name": "DovesMind Synergy - Psychological Support Platform",
+  "description": "A comprehensive React application for a Nigerian psychological support and substance abuse prevention platform, featuring referral guidance, program details, expert profiles, and a secure admin portal.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
