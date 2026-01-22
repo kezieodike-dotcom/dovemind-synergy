@@ -1,40 +1,89 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LiquidEther from '../components/LiquidEther/LiquidEther';
+import '../animations.css';
 
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col w-full overflow-hidden bg-white">
-      {/* 1. Inspiration-Driven Hero Section - Deep Image Blending */}
-      <section className="relative w-full bg-white overflow-hidden pt-6 pb-12 px-4 md:px-10 lg:px-20">
-        <div className="max-w-[1440px] mx-auto min-h-[600px] lg:h-[80vh] rounded-[40px] lg:rounded-[80px] overflow-hidden shadow-2xl border border-black/5 relative group">
+      {/* VIITAL Inspired Hero Section */}
+      <section className="relative min-h-[100vh] flex flex-col bg-[#0a0a0f] overflow-hidden">
+        {/* LiquidEther Background */}
+        <div className="absolute inset-0 z-0 opacity-80">
+          <LiquidEther
+            colors={['#107361', '#00B67A', '#13ecc8']}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
+          />
+        </div>
 
-          {/* Background Layer - The Image */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src="/inspo/hero.png"
-              alt="Professional Counseling Session"
-              className="w-full h-full object-cover lg:object-[80%_center] scale-105 group-hover:scale-100 transition-transform duration-[2000ms] ease-out brightness-110 contrast-[1.02]"
-            />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 z-1 pointer-events-none bg-gradient-to-b from-transparent via-[#0a0a0f]/50 to-[#0a0a0f]"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-6 py-24 max-w-5xl mx-auto">
+
+          <h1 className="text-white font-playfair font-black tracking-tight mb-12">
+            <span className="block text-5xl md:text-7xl lg:text-9xl leading-[0.85] animate-[fadeInUp_0.8s_ease-out_0.2s_backwards]">
+              Professional <br />
+              <span className="italic font-serif text-white/80">Psychological</span>
+            </span>
+            <span className="block text-5xl md:text-7xl lg:text-9xl leading-[0.85] bg-gradient-to-r from-[#107361] via-[#00B67A] to-[#13ecc8] bg-clip-text text-transparent bg-[length:200%_200%] animate-[fadeInUp_0.8s_ease-out_0.4s_backwards,shimmer_3s_ease-in-out_infinite]">
+              Support & Drug <br />
+              Abuse Prevention
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-2xl text-white/70 font-medium max-w-xl mb-12 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.6s_backwards]">
+            Ethical, confidential, and evidence-based support for individuals, families, and institutions across Nigeria.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-24 animate-[fadeInUp_0.8s_ease-out_0.8s_backwards]">
+            <Link to="/book" className="bg-gradient-to-r from-[#107361] to-[#00B67A] text-white px-8 py-4 rounded-xl font-bold transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#107361]/20 active:scale-[0.98]">
+              Book Appointment
+            </Link>
+            <Link to="/programs" className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-xl font-bold transition-all hover:bg-white/10 active:scale-[0.98]">
+              Explore Programs
+            </Link>
           </div>
 
-          {/* The Blend Mask Layer - Teal Gradient (More Transparent & Bright) */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#107361]/95 via-[#107361]/30 to-transparent"></div>
-
-          {/* Content Area - Floating on top of the blend */}
-          <div className="relative z-20 h-full flex flex-col justify-center p-10 md:p-20 lg:p-32 text-white">
-            <div className="max-w-2xl px-4 md:px-0">
-              <h1 className="text-5xl md:text-7xl lg:text-9xl font-playfair font-black leading-[0.85] mb-12 tracking-[-0.04em]">
-                Professional <br />
-                <span className="text-white/70 italic font-serif">Psychological</span> <br />
-                Support & Drug <br />
-                Abuse Prevention
-              </h1>
-              <p className="text-lg md:text-2xl text-white/70 font-normal mb-12 max-w-xl font-inter leading-relaxed tracking-tight">
-                Ethical, confidential, and evidence-based support for individuals, families, and institutions across Nigeria.
-              </p>
+          {/* Stats */}
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 animate-[fadeInUp_0.8s_ease-out_1s_backwards]">
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-3xl font-black bg-gradient-to-br from-white to-white/50 bg-clip-text text-transparent">100%</span>
+              <span className="text-[10px] uppercase font-black tracking-widest text-white/40">Confidential</span>
+            </div>
+            <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-3xl font-black bg-gradient-to-br from-white to-white/50 bg-clip-text text-transparent">24/7</span>
+              <span className="text-[10px] uppercase font-black tracking-widest text-white/40">Support</span>
+            </div>
+            <div className="w-px h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-3xl font-black bg-gradient-to-br from-white to-white/50 bg-clip-text text-transparent">Clinical</span>
+              <span className="text-[10px] uppercase font-black tracking-widest text-white/40">Standard</span>
             </div>
           </div>
+        </div>
 
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-[fadeInUp_1s_ease-out_1.2s_backwards,float_3s_ease-in-out_infinite_2s]">
+          <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1.5">
+            <div className="w-1 h-2 bg-[#107361] rounded-full animate-[scroll_2s_ease-in-out_infinite]"></div>
+          </div>
+          <span className="text-[10px] uppercase font-black tracking-[0.2em] text-white/30">Scroll to explore</span>
         </div>
       </section>
 
