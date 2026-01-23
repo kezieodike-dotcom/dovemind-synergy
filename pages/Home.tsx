@@ -36,11 +36,11 @@ const Home: React.FC = () => {
         <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-6 py-24 max-w-5xl mx-auto">
 
           <h1 className="text-white font-playfair font-black tracking-tight mb-12">
-            <span className="block text-5xl md:text-7xl lg:text-9xl leading-[0.85] animate-[fadeInUp_0.8s_ease-out_0.2s_backwards]">
+            <span className="block text-4xl md:text-6xl lg:text-8xl leading-[0.85] animate-[fadeInUp_0.8s_ease-out_0.2s_backwards]">
               Professional <br />
               <span className="italic font-serif text-white/80">Psychological</span>
             </span>
-            <span className="block text-5xl md:text-7xl lg:text-9xl leading-[0.85] bg-gradient-to-r from-[#107361] via-[#00B67A] to-[#13ecc8] bg-clip-text text-transparent bg-[length:200%_200%] animate-[fadeInUp_0.8s_ease-out_0.4s_backwards,shimmer_3s_ease-in-out_infinite]">
+            <span className="block text-4xl md:text-6xl lg:text-8xl leading-[0.85] bg-gradient-to-r from-[#107361] via-[#00B67A] to-[#13ecc8] bg-clip-text text-transparent bg-[length:200%_200%] animate-[fadeInUp_0.8s_ease-out_0.4s_backwards,shimmer_3s_ease-in-out_infinite]">
               Support & Drug <br />
               Abuse Prevention
             </span>
