@@ -65,12 +65,6 @@ const Footer: React.FC = () => {
           <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest leading-none">
             © {new Date().getFullYear()} DovesMind Synergy. All Professional Standards Reserved.
           </span>
-          <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-brand-green !text-[18px]">verified_user</span>
-            <span className="text-[11px] font-black text-slate-300 uppercase tracking-widest leading-none">
-              Clinical Data Protection Active
-            </span>
-          </div>
         </div>
       </div>
     </footer>
