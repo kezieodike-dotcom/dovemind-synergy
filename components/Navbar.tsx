@@ -16,7 +16,6 @@ const Navbar: React.FC = () => {
     { name: 'Happy Clients', path: '/clients' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'Book Online', path: '/book' },
-    { name: 'Blog', path: '/blog' },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -40,15 +39,15 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-2 md:py-3">
+      <div className="h-[64px] max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10">
         {/* Logo */}
-        <Link to="/" className="flex items-start gap-2 md:gap-3" onClick={closeMenu}>
-          <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center -mt-2">
+        <Link to="/" className="flex items-center gap-3" onClick={closeMenu}>
+          <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
             <img src="/logo.png" alt="DovesMind Logo" className="w-full h-full object-contain" />
           </div>
-          <div className="flex flex-col pt-1">
-            <span className="text-primary text-3xl md:text-3xl font-black leading-none tracking-tighter uppercase font-playfair">DovesMind</span>
-            <span className="text-[#107361] text-[10px] md:text-xs font-black tracking-[0.4em] uppercase font-inter">Synergy</span>
+          <div className="flex flex-col">
+            <span className="text-primary text-xl md:text-2xl font-black leading-none tracking-tighter uppercase font-playfair">DovesMind</span>
+            <span className="text-[#107361] text-[8px] md:text-[10px] font-black tracking-[0.3em] uppercase font-inter">Synergy</span>
           </div>
         </Link>
 
