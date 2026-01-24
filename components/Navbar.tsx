@@ -13,7 +13,6 @@ const Navbar: React.FC = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/programs' },
     { name: 'Contact Us', path: '/contact' },
-    { name: 'Book Online', path: '/book' },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
