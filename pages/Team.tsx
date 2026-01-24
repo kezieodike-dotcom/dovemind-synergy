@@ -34,37 +34,37 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-10 md:py-16">
-      <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12 md:mb-16">
+    <div className="section-padding px-6 md:px-10 lg:px-20 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16 md:mb-24">
         <div className="max-w-2xl">
-          <h1 className="text-[#1a2b3c] text-3xl md:text-5xl font-black leading-tight tracking-tight">
-            Our Dedicated <span className="text-primary">Experts</span>
+          <h1 className="hero font-black leading-tight tracking-tight text-slate-900">
+            Our Dedicated <span className="text-primary italic">Experts</span>
           </h1>
-          <p className="text-slate-600 text-base md:text-lg font-normal leading-relaxed mt-4 md:mt-6">
+          <p className="prose-p text-slate-600 font-medium mt-6">
             Meet the professionals committed to ethical, confidential, and evidence-based psychological support for Nigeria.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className="bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-bold border border-slate-200 hover:bg-slate-200 transition-all text-xs md:text-sm uppercase tracking-widest whitespace-nowrap">View Certifications</button>
-          <button className="bg-primary-teal text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-teal-500/20 hover:brightness-110 transition-all text-xs md:text-sm uppercase tracking-widest whitespace-nowrap">Join Our Team</button>
+          <button className="btn btn-secondary text-slate-700 bg-slate-50 hover:bg-slate-100 border-slate-200">View Certifications</button>
+          <button className="btn btn-primary bg-primary-teal border-transparent">Join Our Team</button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {experts.map((e, i) => (
-          <div key={i} className="group bg-white p-5 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-300">
-            <div className="relative overflow-hidden rounded-2xl mb-5">
+          <div key={i} className="group bg-white p-5 rounded-[32px] shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-300">
+            <div className="relative overflow-hidden rounded-2xl mb-6">
               <div className="w-full aspect-[4/5] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${e.image})` }}></div>
-              <div className="absolute bottom-3 right-3 bg-gradient-to-r from-primary to-primary-teal text-white text-[10px] font-black px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
-                <span className="material-symbols-outlined !text-[14px] fill-1">verified</span> VERIFIED
+              <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md text-primary-teal text-[10px] font-black px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm border border-white/20">
+                <span className="material-symbols-outlined !text-[14px]">verified</span> VERIFIED
               </div>
             </div>
-            <h3 className="text-[#1a2b3c] text-lg font-bold mb-1">{e.name}</h3>
+            <h3 className="h4 font-bold mb-1 text-slate-900">{e.name}</h3>
             <p className="text-primary-teal text-[10px] font-black uppercase tracking-widest mb-3">{e.role}</p>
-            <p className="text-slate-600 text-sm leading-relaxed mb-5 line-clamp-3">{e.desc}</p>
+            <p className="text-slate-500 text-sm leading-relaxed mb-5 line-clamp-3">{e.desc}</p>
             <div className="flex flex-wrap gap-2">
               {e.tags.map((t, j) => (
-                <span key={j} className="px-2.5 py-1 bg-blue-50 text-[10px] font-bold text-primary rounded border border-blue-100 uppercase">{t}</span>
+                <span key={j} className="px-3 py-1.5 bg-slate-50 text-[10px] font-black text-slate-600 rounded-lg border border-slate-100 uppercase tracking-wider">{t}</span>
               ))}
             </div>
           </div>
