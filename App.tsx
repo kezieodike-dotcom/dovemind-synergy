@@ -15,7 +15,6 @@ import BookAppointment from './pages/BookAppointment';
 import BookingConfirmation from './pages/BookingConfirmation';
 import Contact from './pages/Contact';
 import About from './pages/About';
-import Clients from './pages/Clients';
 import Blog from './pages/Blog';
 
 import Login from './pages/Login';
@@ -57,7 +56,7 @@ const App: React.FC = () => {
         <Route path="/book" element={<PublicLayout><BookAppointment /></PublicLayout>} />
         <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
         <Route path="/about" element={<PublicLayout><About /></PublicLayout>} />
-        <Route path="/clients" element={<PublicLayout><Clients /></PublicLayout>} />
+        <Route path="/about" element={<PublicLayout><About /></PublicLayout>} />
         <Route path="/blog" element={<PublicLayout><Blog /></PublicLayout>} />
 
         <Route path="/confirmation" element={<PublicLayout><BookingConfirmation /></PublicLayout>} />

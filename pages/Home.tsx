@@ -35,26 +35,26 @@ const Home: React.FC = () => {
         {/* Hero Content */}
         <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-6 py-24 max-w-5xl mx-auto">
 
-          <h1 className="text-white font-playfair font-black tracking-tight mb-12">
-            <span className="block text-4xl md:text-6xl lg:text-8xl leading-[0.85] animate-[fadeInUp_0.8s_ease-out_0.2s_backwards]">
+          <h1 className="text-white font-playfair font-black tracking-tight mb-8">
+            <span className="hero block leading-[0.85] animate-[fadeInUp_0.8s_ease-out_0.2s_backwards]">
               Professional <br />
               <span className="italic font-serif text-white/80">Psychological</span>
             </span>
-            <span className="block text-4xl md:text-6xl lg:text-8xl leading-[0.85] bg-gradient-to-r from-[#107361] via-[#00B67A] to-[#13ecc8] bg-clip-text text-transparent bg-[length:200%_200%] animate-[fadeInUp_0.8s_ease-out_0.4s_backwards,shimmer_3s_ease-in-out_infinite]">
+            <span className="hero block leading-[0.85] bg-gradient-to-r from-[#107361] via-[#00B67A] to-[#13ecc8] bg-clip-text text-transparent bg-[length:200%_200%] animate-[fadeInUp_0.8s_ease-out_0.4s_backwards,shimmer_3s_ease-in-out_infinite]">
               Support & Drug <br />
               Abuse Prevention
             </span>
           </h1>
 
-          <p className="text-lg md:text-2xl text-white/70 font-medium max-w-xl mb-12 leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.6s_backwards]">
+          <p className="text-lg md:text-2xl text-white/70 font-medium prose-p mb-12 animate-[fadeInUp_0.8s_ease-out_0.6s_backwards]">
             Ethical, confidential, and evidence-based support for individuals, families, and institutions across Nigeria.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-24 animate-[fadeInUp_0.8s_ease-out_0.8s_backwards]">
-            <Link to="/book" className="bg-gradient-to-r from-[#107361] to-[#00B67A] text-white px-8 py-4 rounded-xl font-bold transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#107361]/20 active:scale-[0.98]">
+            <Link to="/book" className="btn-primary btn-lg transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#107361]/20">
               Book Appointment
             </Link>
-            <Link to="/programs" className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-xl font-bold transition-all hover:bg-white/10 active:scale-[0.98]">
+            <Link to="/programs" className="btn-secondary btn-lg transition-all hover:bg-white/10">
               Explore Programs
             </Link>
           </div>
@@ -325,6 +325,39 @@ const Home: React.FC = () => {
             <Link to="/privacy" className="text-primary hover:text-white font-black uppercase tracking-widest text-[10px] transition-colors">Privacy Policy</Link>
             <Link to="/privacy" className="text-primary hover:text-white font-black uppercase tracking-widest text-[10px] transition-colors">Terms of Service</Link>
             <Link to="/privacy" className="text-primary hover:text-white font-black uppercase tracking-widest text-[10px] transition-colors">Confidentiality & Ethics Statement</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8.5. Happy Clients (Migrated) */}
+      <section id="clients" className="section-padding bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
+          <div className="text-center mb-16">
+            <h4 className="text-primary text-[10px] font-black uppercase tracking-[0.25em] mb-4 font-inter">Success Stories</h4>
+            <h2 className="text-4xl md:text-5xl font-playfair font-black text-slate-900 mb-6">Happy <span className="text-primary-teal italic">Clients</span></h2>
+            <p className="prose-p text-slate-500 mx-auto">
+              Read about the journeys of resilience and recovery from the individuals and institutions we've had the privilege to support.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="bg-white border border-slate-100 p-8 rounded-[32px] shadow-sm hover:shadow-xl transition-all duration-300">
+                <span className="material-symbols-outlined text-primary mb-6 !text-4xl">format_quote</span>
+                <p className="text-slate-600 font-medium mb-8 leading-relaxed italic text-sm">
+                  "The support I received from DovesMind Synergy was life-changing. Their professional and non-judgmental approach made all the difference."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 font-bold text-xs">
+                    {(i + 10).toString().substring(0, 2)}
+                  </div>
+                  <div>
+                    <div className="font-black text-slate-900 uppercase tracking-widest text-[10px]">Anonymous Client</div>
+                    <div className="text-[10px] font-bold text-primary-teal">Verified Recovery</div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

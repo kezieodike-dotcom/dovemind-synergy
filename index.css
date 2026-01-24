@@ -15,8 +15,7 @@
 
   /* 📐 Base Unit System (8px) */
   --space-unit: 8px;
-  --space-4: 4px;
-  /* micro */
+  --space-4: 4px;   /* micro */
   --space-8: 8px;
   --space-16: 16px;
   --space-24: 24px;
@@ -26,24 +25,34 @@
   --space-64: 64px;
   --space-80: 80px;
   --space-96: 96px;
+  --space-128: 128px;
 
-  /* Typography Scale (Desktop Default) */
-  --font-h1-display: 48px;
+  /* 🏗️ Section Spacing (UX Grid) */
+  --space-section: 96px;     /* Between main sections */
+  --space-block: 48px;       /* Between content blocks */
+  --space-related: 24px;     /* Between related items */
+
+  /* Typography Scale (Desktop Standard) */
+  --font-hero-xl: 56px;
+  --font-hero: 48px;
   --font-h1: 40px;
   --font-h2: 32px;
   --font-h3: 24px;
   --font-h4: 20px;
+  --font-h5: 18px;
   --font-body-lg: 18px;
   --font-body: 16px;
   --font-small: 14px;
   --font-caption: 12px;
 
-  /* Line Heights (Font Size * 1.4 - 1.6) */
-  --lh-h1-display: 56px;
+  /* Line Heights (1.45x - 1.6x) */
+  --lh-hero-xl: 64px;
+  --lh-hero: 56px;
   --lh-h1: 48px;
   --lh-h2: 40px;
   --lh-h3: 32px;
   --lh-h4: 28px;
+  --lh-h5: 26px;
   --lh-body-lg: 28px;
   --lh-body: 24px;
   --lh-small: 20px;
@@ -77,51 +86,32 @@
     font-weight: 400;
     font-size: var(--font-body);
     line-height: var(--lh-body);
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01';
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  .h1 {
-    font-size: var(--font-h1);
-    line-height: var(--lh-h1);
-    font-weight: 700;
-    margin-bottom: var(--space-16);
-  }
+  /* Typography Law: Scanning > Reading */
+  h1, .h1 { font-size: var(--font-h1); line-height: var(--lh-h1); font-weight: 700; margin-bottom: var(--space-8); }
+  h2, .h2 { font-size: var(--font-h2); line-height: var(--lh-h2); font-weight: 600; margin-bottom: var(--space-8); }
+  h3, .h3 { font-size: var(--font-h3); line-height: var(--lh-h3); font-weight: 600; margin-bottom: var(--space-8); }
+  h4, .h4 { font-size: var(--font-h4); line-height: var(--lh-h4); font-weight: 600; margin-bottom: var(--space-8); }
+  h5, .h5 { font-size: var(--font-h5); line-height: var(--lh-h5); font-weight: 500; margin-bottom: var(--space-8); }
+  
+  .hero-xl { font-size: var(--font-hero-xl); line-height: var(--lh-hero-xl); font-weight: 700; margin-bottom: var(--space-24); }
+  .hero { font-size: var(--font-hero); line-height: var(--lh-hero); font-weight: 700; margin-bottom: var(--space-24); }
 
-  h2,
-  .h2 {
-    font-size: var(--font-h2);
-    line-height: var(--lh-h2);
-    font-weight: 600;
-    margin-bottom: var(--space-16);
-  }
-
-  h3,
-  .h3 {
-    font-size: var(--font-h3);
-    line-height: var(--lh-h3);
-    font-weight: 600;
-    margin-bottom: var(--space-16);
-  }
-
-  h4,
-  .h4 {
-    font-size: var(--font-h4);
-    line-height: var(--lh-h4);
-    font-weight: 600;
-    margin-bottom: var(--space-16);
-  }
-
-  p {
-    margin-bottom: var(--paragraph-spacing);
+  p { margin-bottom: var(--space-16); }
+  
+  /* Text block max width: 60–75 characters */
+  .prose-p {
+    max-width: 65ch;
+    line-height: 1.6;
   }
 }
 
 @layer components {
-
   /* Button System */
   .btn {
     @apply inline-flex items-center justify-center transition-all active:scale-[0.98] font-medium;
@@ -130,23 +120,9 @@
     cursor: pointer;
   }
 
-  .btn-sm {
-    height: var(--btn-height-sm);
-    padding: 0 var(--space-16);
-    font-size: var(--font-small);
-  }
-
-  .btn-default {
-    height: var(--btn-height-default);
-    padding: 0 var(--space-24);
-    font-size: var(--font-body);
-  }
-
-  .btn-lg {
-    height: var(--btn-height-lg);
-    padding: 0 var(--space-24);
-    font-size: var(--font-body);
-  }
+  .btn-sm { height: var(--btn-height-sm); padding: 0 var(--space-16); font-size: var(--font-small); }
+  .btn-default { height: var(--btn-height-default); padding: 0 var(--space-24); font-size: var(--font-body); }
+  .btn-lg { height: var(--btn-height-lg); padding: 0 var(--space-24); font-size: var(--font-body); }
 
   .btn-primary {
     @apply btn btn-default bg-primary text-white hover:brightness-110 shadow-lg shadow-primary/20;
@@ -172,32 +148,44 @@
     font-weight: 500;
   }
 
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
 
-/* Smooth transitions for theme switching */
-* {
-  @apply transition-colors duration-200;
+/* Global Section Spacing */
+.section-padding {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
 }
 
-/* mobile-first responsive adjustments */
-@media (max-width: 640px) {
-  h1 {
-    @apply text-3xl;
+.container-padding {
+  @apply px-4 md:px-8 lg:px-16;
+}
+
+/* Global Transitions */
+* { @apply transition-colors duration-200; }
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+  :root {
+    --font-hero-xl: 40px;
+    --lh-hero-xl: 48px;
+    --font-hero: 40px;
+    --lh-hero: 48px;
+    --font-h1: 32px;
+    --lh-h1: 40px;
+    --font-h2: 28px;
+    --lh-h2: 36px;
+    --font-h3: 22px;
+    --lh-h3: 28px;
+    
+    --space-section: 64px;
+    --space-block: 32px;
   }
 
-  h2 {
-    @apply text-2xl;
-  }
+  .header-height { height: var(--header-height-mobile); }
+}
 
-  .container-padding {
-    @apply px-6;
-  }
+@media (min-width: 769px) {
+  .header-height { height: var(--header-height-desktop); }
 }
