@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     <header className="header-height w-full bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
       {/* Top Bar - Hidden on mobile, visible on desktop */}
       <div className="border-b border-gray-100 hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center justify-end px-6 md:px-10 py-2 gap-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-end px-6 md:px-10 py-2 gap-4">
           <div className="flex items-center gap-2 text-[#555]">
             <span className="material-symbols-outlined text-xl">account_circle</span>
             <Link to="/login" className="text-xs font-semibold hover:text-primary transition-colors">Staff Log In</Link>
