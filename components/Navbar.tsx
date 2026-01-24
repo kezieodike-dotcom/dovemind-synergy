@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
               <span className="material-symbols-outlined text-2xl">close</span>
             </button>
           </div>
-          <nav className="flex-1 px-6 py-8">
+          <nav className="px-6 py-8">
             <ul className="flex flex-col gap-6">
               {navLinks.map((link) => (
                 <li key={link.path}>
