@@ -109,69 +109,72 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                tags: ["19-60", "Family"],
+                tags: ["Family", "Support"],
                 title: "Family Support Programs",
                 desc: "Strengthen family dynamics and communication through expert clinical guidance.",
                 img: "/inspo/couples.png",
-                bg: "bg-[#E0F2EF]",
-                tagBg: "bg-white",
-                dot: "bg-[#107361]"
+                color: "text-[#107361]"
               },
               {
-                tags: ["Person", "Clinical"],
-                title: "Individual Therapy",
-                desc: "Personalized therapeutic sessions focused on self-growth and emotional health.",
+                tags: ["Individual", "Therapy"],
+                title: "Personalized Therapy",
+                desc: "One-on-one therapeutic sessions focused on self-growth and emotional health.",
                 img: "/inspo/anger.png",
-                bg: "bg-[#FFF4E4]",
-                tagBg: "bg-white",
-                dot: "bg-orange-400"
+                color: "text-orange-500"
               },
               {
-                tags: ["15-25", "Teens"],
-                title: "Teenage Sessions",
+                tags: ["Youth", "Guidance"],
+                title: "Teenage Counseling",
                 desc: "Support and guide you toward a brighter tomorrow with specialized youth care.",
                 img: "/inspo/teenage.png",
-                bg: "bg-[#F0F2FF]",
-                tagBg: "bg-white",
-                dot: "bg-blue-400"
+                color: "text-blue-500"
               },
               {
-                tags: ["Clinical", "Recovery"],
+                tags: ["Recovery", "Clinical"],
                 title: "Substance Abuse Treatment",
                 desc: "Comprehensive rehabilitation and prevention tracks designed for lasting recovery.",
                 img: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800",
-                bg: "bg-[#E8F5E9]",
-                tagBg: "bg-white",
-                dot: "bg-green-600"
+                color: "text-green-600"
               },
               {
-                tags: ["Group", "Learning"],
-                title: "Mental Health Workshops",
+                tags: ["Education", "Workshops"],
+                title: "Mental Health Training",
                 desc: "Interactive educational sessions promoting psychological literacy and resilience.",
                 img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
-                bg: "bg-[#FFF1F0]",
-                tagBg: "bg-white",
-                dot: "bg-red-400"
+                color: "text-red-500"
               }
             ].map((service, i) => (
-              <div key={i} className={`${service.bg} min-h-[500px] rounded-[40px] p-8 flex flex-col group hover:shadow-2xl transition-all duration-500 overflow-hidden relative border border-black/5`}>
-                <div className="flex items-center gap-2 mb-8">
-                  {service.tags.map((tag, j) => (
-                    <span key={j} className={`${service.tagBg} text-slate-800 text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-sm font-inter border border-black/5`}>{tag}</span>
-                  ))}
-                  <span className={`ml-auto w-3 h-3 rounded-full ${service.dot}`}></span>
+              <div key={i} className="group flex flex-col bg-white rounded-[32px] overflow-hidden border border-slate-100 hover:border-slate-200 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 relative">
+                {/* Image Section */}
+                <div className="h-[240px] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors z-10"></div>
+                  <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+
+                  {/* Floating Tag */}
+                  <div className="absolute top-6 left-6 z-20 flex gap-2">
+                    {service.tags.map((tag, j) => (
+                      <span key={j} className="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-slate-800 shadow-sm border border-white/20">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                <h3 className="text-3xl font-playfair font-black text-slate-900 mb-6 group-hover:text-[#107361] transition-colors leading-tight tracking-[-0.02em]">{service.title}</h3>
-                <p className="text-[14px] text-slate-500 font-medium leading-[1.7] font-inter mb-10 max-w-[90%]">{service.desc}</p>
+                {/* Content Section */}
+                <div className="p-8 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-playfair font-black text-slate-900 mb-4 group-hover:text-primary transition-colors leading-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 font-medium leading-relaxed mb-8 line-clamp-3">
+                    {service.desc}
+                  </p>
 
-                <Link to="/programs" className="mt-2 flex items-center gap-4 text-slate-900 font-black uppercase tracking-[0.25em] text-[10px] hover:translate-x-2 transition-transform font-inter">
-                  Read More
-                  <span className="material-symbols-outlined !text-sm">arrow_forward</span>
-                </Link>
-
-                <div className="mt-auto -mx-8 -mb-8 aspect-[4/3] rounded-t-[40px] overflow-hidden border-t-2 border-white/50">
-                  <img src={service.img} alt={service.title} className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                  <div className="mt-auto flex items-center justify-between border-t border-slate-50 pt-6">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-primary transition-colors">Learn More</span>
+                    <button className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-all">
+                      <span className="material-symbols-outlined !text-[18px]">arrow_outward</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
