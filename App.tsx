@@ -4,6 +4,7 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ChatBot from './components/ChatBot';
 
 
 import Home from './pages/Home';
@@ -35,7 +36,7 @@ const PublicLayout: React.FC<PublicLayoutProps> = ({ children }) => (
     <Navbar />
     <main className="flex-1">{children}</main>
     <Footer />
-
+    <ChatBot />
   </div>
 );
 
